@@ -45,10 +45,9 @@ class PessoaAdapter(
 
             val valor = pessoa.valorReceber.toDouble()
             if (valor < 0) {
-                deveReceberTv.text = "Deve receber: R$${pessoa.valorReceber}"
-            } else {
-                deveReceberTv.text = "Deve pagar: R$${pessoa.valorReceber}"
-            }
+                pessoa.valorReceber = (valor * -1).toString()
+                deveReceberTv.text = "Deve receber: R$" + pessoa.valorReceber
+            } else deveReceberTv.text = "Deve pagar: R$" + pessoa.valorReceber
         }
 
         return pessoaTileView
