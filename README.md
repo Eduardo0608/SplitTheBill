@@ -1,5 +1,9 @@
 # SplitTheBill
 
+### Video demonstrating how the application works
+
+### https://www.youtube.com/watch?v=d0CbZ3vLPFU
+
 Project developed for the PDMS5 discipline.
 
 ## Description
