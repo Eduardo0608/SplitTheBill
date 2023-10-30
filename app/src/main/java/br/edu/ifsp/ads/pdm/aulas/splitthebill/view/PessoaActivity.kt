@@ -24,9 +24,9 @@ class PessoaActivity : AppCompatActivity() {
             with(apb) {
                 with(_recebPessoa) {
                     nomeEt.setText(nome)
-                    valorGastoEt.setText(valorPago)
-                    valorReceberEt.setText(valorReceber)
-                    descricaoEt.setText(observacao)
+                    valorGastoEt.setText(devePagar)
+                    valorReceberEt.setText(deveReceber)
+                    descricaoEt.setText(descricao)
                 }
             }
         }
@@ -43,9 +43,9 @@ class PessoaActivity : AppCompatActivity() {
             val person = Pessoa(
                 id = recebPessoa?.id ?: Random(System.currentTimeMillis()).nextInt(),
                 nome = apb.nomeEt.text.toString(),
-                valorPago = apb.valorGastoEt.text.toString(),
-                valorReceber = apb.valorReceberEt.text.toString(),
-                observacao = apb.descricaoEt.text.toString(),
+                devePagar = apb.valorGastoEt.text.toString(),
+                deveReceber = apb.valorReceberEt.text.toString(),
+                descricao = apb.descricaoEt.text.toString(),
             )
             val resultIntent = Intent()
             resultIntent.putExtra(EXTRA_PESSOA, person)

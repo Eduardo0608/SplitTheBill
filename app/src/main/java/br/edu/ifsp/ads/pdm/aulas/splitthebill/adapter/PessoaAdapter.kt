@@ -41,13 +41,13 @@ class PessoaAdapter(
 
         with(pessoaTileView?.tag as TileContactHolder) {
             nomeTv.text = "Nome: ${pessoa.nome}"
-            devePagarTv.text = "Valor pago: R$${pessoa.valorPago}"
+            devePagarTv.text = "Valor pago: R$${pessoa.devePagar}"
 
-            val valor = pessoa.valorReceber.toDouble()
+            val valor = pessoa.deveReceber.toDouble()
             if (valor < 0) {
-                pessoa.valorReceber = (valor * -1).toString()
-                deveReceberTv.text = "Deve receber: R$" + pessoa.valorReceber
-            } else deveReceberTv.text = "Deve pagar: R$" + pessoa.valorReceber
+                pessoa.deveReceber = (valor * -1).toString()
+                deveReceberTv.text = "Deve receber: R$" + pessoa.deveReceber
+            } else deveReceberTv.text = "Deve pagar: R$" + pessoa.deveReceber
         }
 
         return pessoaTileView

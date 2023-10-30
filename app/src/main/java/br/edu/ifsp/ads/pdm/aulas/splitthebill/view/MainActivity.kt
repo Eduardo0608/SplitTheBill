@@ -34,14 +34,14 @@ class MainActivity : AppCompatActivity() {
     private fun contaValores() {
         var valorTotal = 0.0
         for (i in 0 until pessoaList.count { true }) {
-            val valorPago = pessoaList[i].valorPago.toDouble()
-            valorTotal += valorPago
+            val devePagar = pessoaList[i].devePagar.toDouble()
+            valorTotal += devePagar
             setValorTotal(valorTotal.toString())
         }
         val valorPorPessoa = valorTotal / pessoaList.count { true }
         for (i in 0 until pessoaList.count { true }) {
-            val valorPago = pessoaList[i].valorPago.toDouble()
-            pessoaList[i].valorReceber = (valorPorPessoa - valorPago).toString()
+            val devePagar = pessoaList[i].devePagar.toDouble()
+            pessoaList[i].deveReceber = (valorPorPessoa - devePagar).toString()
             setValorPorPessoa(valorPorPessoa.toString())
         }
     }
