@@ -18,7 +18,8 @@ class PessoaAdapter(
     private data class TileContactHolder(
         val nomeTv: TextView,
         val deveReceberTv: TextView,
-        val devePagarTv: TextView
+        val devePagarTv: TextView,
+        val descricaoTv: TextView
     )
 
     // Sobrescreve o método getView() para inflar o layout do tile e popular as views com os dados da pessoa
@@ -41,6 +42,7 @@ class PessoaAdapter(
                 pessoaTileView.findViewById(R.id.nomeTv),
                 pessoaTileView.findViewById(R.id.deveReceberTv),
                 pessoaTileView.findViewById(R.id.devePagarTv),
+                pessoaTileView.findViewById(R.id.descricaoTv)
             )
 
             // Armazena a instância da classe TileContactHolder como uma tag na view do tile
@@ -52,6 +54,7 @@ class PessoaAdapter(
             // Popula as views com os dados da pessoa
             nomeTv.text = "Nome: ${pessoa.nome}"
             devePagarTv.text = "Valor pago: R$${pessoa.devePagar}"
+            descricaoTv.text = "Produtos: ${pessoa.descricao}" + "${pessoa.descricao2}" + "${pessoa.descricao3}"
 
             // Verifica se o valor a receber é negativo
             val valor = pessoa.deveReceber.toDouble()
@@ -59,7 +62,9 @@ class PessoaAdapter(
                 // Se for negativo, inverte o valor e altera o texto da view
                 pessoa.deveReceber = (valor * -1).toString()
                 deveReceberTv.text = "Deve receber: R$" + pessoa.deveReceber
+                descricaoTv.text = "Produtos: ${pessoa.descricao}" + "${pessoa.descricao2}" + "${pessoa.descricao3}"
             } else deveReceberTv.text = "Deve pagar: R$" + pessoa.deveReceber
+            descricaoTv.text = "Produtos: ${pessoa.descricao}, " + "${pessoa.descricao2}, " + "${pessoa.descricao3}"
         }
 
         // Retorna a view do tile

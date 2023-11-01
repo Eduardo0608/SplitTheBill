@@ -24,4 +24,10 @@
         android:layout_height="wrap_content"
         android:text="Deve pagar: R$" />
 
+    <TextView
+        android:id="@+id/descricaoTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descrição: " />
+
 </LinearLayout>
