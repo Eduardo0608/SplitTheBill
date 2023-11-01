@@ -35,6 +35,12 @@ class PessoaActivity : AppCompatActivity() {
                     valorGastoEt.setText(devePagar)
                     valorReceberEt.setText(deveReceber)
                     descricaoEt.setText(descricao)
+                    valorGastoEt2.setText(devePagar2)
+                    valorReceberEt2.setText(deveReceber2)
+                    descricaoEt2.setText(descricao2)
+                    valorGastoEt3.setText(devePagar3)
+                    valorReceberEt3.setText(deveReceber3)
+                    descricaoEt3.setText(descricao3)
                 }
             }
         }
@@ -48,6 +54,12 @@ class PessoaActivity : AppCompatActivity() {
                 valorGastoEt.isEnabled = false
                 valorReceberEt.isEnabled = false
                 descricaoEt.isEnabled = false
+                valorGastoEt2.isEnabled = false
+                valorReceberEt2.isEnabled = false
+                descricaoEt2.isEnabled = false
+                valorGastoEt3.isEnabled = false
+                valorReceberEt3.isEnabled = false
+                descricaoEt3.isEnabled = false
                 saveBt.visibility = View.GONE
             }
         }
@@ -61,6 +73,12 @@ class PessoaActivity : AppCompatActivity() {
                 devePagar = apb.valorGastoEt.text.toString(),
                 deveReceber = apb.valorReceberEt.text.toString(),
                 descricao = apb.descricaoEt.text.toString(),
+                devePagar2 = apb.valorGastoEt2.text.toString(),
+                deveReceber2 = apb.valorReceberEt2.text.toString(),
+                descricao2 = apb.descricaoEt2.text.toString(),
+                devePagar3 = apb.valorGastoEt3.text.toString(),
+                deveReceber3 = apb.valorReceberEt3.text.toString(),
+                descricao3 = apb.descricaoEt3.text.toString()
             )
             // Prepara um Intent com a nova pessoa e encerra a Activity, enviando o resultado de volta
             val resultIntent = Intent()

@@ -41,13 +41,16 @@ class MainActivity : AppCompatActivity() {
         // Itera sobre a lista de pessoas para calcular o valor total das compras
         for (i in 0 until pessoaList.count { true }) {
             val devePagar = pessoaList[i].devePagar.toDouble()
-            valorTotal += devePagar
+            val devePagar2 = pessoaList[i].devePagar2.toDouble()
+            val devePagar3 = pessoaList[i].devePagar3.toDouble()
+            valorTotal += (devePagar + devePagar2 + devePagar3)
             setValorTotal(valorTotal.toString())
         }
         // Calcula o valor dividido por pessoa e atualiza a interface
         val valorPorPessoa = valorTotal / pessoaList.count { true }
         for (i in 0 until pessoaList.count { true }) {
-            val devePagar = pessoaList[i].devePagar.toDouble()
+            val devePagar =
+                pessoaList[i].devePagar.toDouble() + pessoaList[i].devePagar2.toDouble() + pessoaList[i].devePagar3.toDouble()
             pessoaList[i].deveReceber = (valorPorPessoa - devePagar).toString()
             setValorPorPessoa(valorPorPessoa.toString())
         }
